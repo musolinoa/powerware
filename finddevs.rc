@@ -1,0 +1,4 @@
+#!/bin/rc
+
+grep -li powerware '#u'/usb/*/ctl | while(f=`{read})
+	echo `{basename `{basename -d $f}} | sed 's/ep([0-9]+)\.([0-9]+)/\1/'
